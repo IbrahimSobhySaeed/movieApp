@@ -1,0 +1,181 @@
+<header>
+  <div class="container">
+    <h3>Flix Tv</h3>
+    <h1>Trending <span>Movies</span>, TVs Shows, & More.</h1>
+    <p>
+      <a href="">Action</a>,
+      <a href="">Drama</a>,
+      <a href="">Romance</a>,
+      <a href="">Comedy</a>
+    </p>
+    <a   class="header-btn" (click)="getStartedBtn()">
+      <i class="fas fa-play mr-1"></i>
+      Get Started
+    </a>
+  </div>
+</header>
+<section id="section2" class="feature ">
+  <div class="container">
+    <div class="row">
+      <!-- cell feature -->
+      <div class="col-lg-3 col-md-6 ">
+        <div class="cell">
+          <div class="cellIcon ">
+            <img src="../../assets/images/27-globe-gradient.gif" alt=""    >
+          </div>
+          <div class="cellContent">
+            <h4>Works Worldwide</h4>
+            <p>No other free streaming service delivers more content to and from more countries worldwide.</p>
+          </div>
+
+        </div>
+      </div>
+      <!-- cell feature -->
+      <div class="col-lg-3 col-md-6 ">
+        <div class="cell">
+          <div class="cellIcon">
+            <img src="../../assets/images/1876-cinema-gradient.gif" alt=""   >
+          </div>
+          <div class="cellContent">
+            <h4>Thousands of Titles</h4>
+            <p>Choose from movies, shows, sports and music documentaries, AMC series, Live TV and more.</p>
+          </div>
+
+        </div>
+      </div>
+      <!-- cell feature -->
+      <div class="col-lg-3 col-md-6 ">
+        <div class="cell">
+          <div class="cellIcon">
+            <img src="../../assets/images/453-savings-pig-gradient.gif" alt=""   >
+          </div>
+          <div class="cellContent">
+            <h4>Always 100% Free</h4>
+            <p>Welcome to instant gratification at its best. Watch now without any payment or subscription and end the search for free movie websites.</p>
+          </div>
+
+        </div>
+      </div>
+      <!-- cell feature -->
+      <div class="col-lg-3 col-md-6 ">
+        <div class="cell">
+          <div class="cellIcon">
+            <img src="../../assets/images/478-computer-display-gradient.gif" alt=""   >
+          </div>
+          <div class="cellContent">
+            <h4>Device-Friendly</h4>
+            <p>Stream the good stuff from your favorite devices including Apple, Android, Smart TVs and more.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section id="section3" class="saveResuame ">
+  <div class="container">
+    <div class="row">
+        <!-- box Content -->
+        <div class="col-md-6 d-flex justify-content-center align-items-center ">
+          <div class="boxContent">
+            <h2>Pause, save, resume.</h2>
+            <p>Once you register for a free account with Plex, we’ll keep your place from screen to screen as long as you’re signed in
+              . No matter what device you choose, you can pick up where you left off with ease.</p>
+              <button class="btn rounded-pill">regesration Free</button>
+          </div>
+      </div>
+
+      <!-- image box -->
+      <div class=" col-md-6 ">
+        <div class="imageBox">
+            <img src="../../assets/images/Continue_Watching_v2-2-1440x1529.png" alt=""   class="w-100"  >
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="my-5">
+      <h2>Playing now on Flex</h2>
+
+      <owl-carousel-o [options]="customOptions" class="bg-white">
+
+        <ng-container *ngFor="let slide of trendingMovies">
+          <ng-template carouselSlide [id]="slide.id">
+            <img [src]="imgPrefix+slide.poster_path" [alt]="slide.alt" [title]="slide.title">
+          </ng-template>
+        </ng-container>
+
+      </owl-carousel-o>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+
+
+<Section id="trendingTv" class="trend">
+  <div class="container">
+    <h2>Top Trending Tv Shows</h2>
+    <div class="movies">
+      <div class="row">
+        <div class="col-md-6 col-lg-3" *ngFor="let tv of trendingTv">
+          <div class="movie">
+            <div class="movie-cover">
+              <img [src]="imgPrefix+tv.poster_path" [alt]="tv.title" class="img-fluid">
+            </div>
+            <div class="movie-details">
+
+              <div class="movie-rate">
+                <p><i class="far fa-star"></i>{{tv.vote_average}}</p>
+                <p>{{tv.original_language}}</p>
+              </div>
+
+              <div class="movie-title">
+                <h4>{{tv.name}}</h4>
+                <p>{{tv.first_air_date.split("-").slice(0,1)}}</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</Section>
+<Section id="trendingPerson" class="trend">
+  <div class="container">
+    <h2>Top Trending Actors</h2>
+    <div class="movies">
+      <div class="row">
+        <div class="col-md-6 col-lg-3" *ngFor="let person of trendingperson">
+          <div class="movie">
+            <div class="movie-cover">
+              <img [src]="imgPrefix+person.profile_path" [alt]="person.name" class="img-fluid">
+            </div>
+            <div class="movie-details">
+
+              <div></div>
+
+              <div class="movie-title">
+                <h4>{{person.name}}</h4>
+                <p>{{person.known_for_department}}</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</Section>
+<app-plans></app-plans>

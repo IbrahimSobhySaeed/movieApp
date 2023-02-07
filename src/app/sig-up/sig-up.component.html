@@ -1,0 +1,50 @@
+<section class="sign-form">
+    <div class="container">
+        <div class="sign-up">
+
+            <div class="logo">
+                <img src="../../assets/images/logo.svg" alt="">
+            </div>
+
+            <form [formGroup]="registraionForm" (ngSubmit)="getRegisterData(registraionForm)">
+                <div class="form-group">
+                  <label for="userName">User name</label>
+                  <input type="text" id="userName"
+                  [class.is-invalid]="registraionForm.get('userName')?.invalid == true &&
+                  registraionForm.get('userName')?.touched == true" formControlName="userName" class="form-control w-100 "
+                   placeholder="Name" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <span class="m-3 p-2  text-danger border border-danger"
+                  *ngIf="registraionForm.get('userName')?.invalid == true &&
+                  registraionForm.get('userName')?.touched == true">
+                    first Name not valid
+                  </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control w-100 " formControlName="Email" placeholder="Email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control w-100" formControlName="password" placeholder="Password" id="exampleInputPassword1">
+                </div>
+
+                <div class=" form-check d-flex">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">I agree to the <a href="">Privacy Policy</a></label>
+                </div>
+
+                <button type="submit" routerLink="/">sign Up</button>
+            </form>
+
+            <span>or</span>
+
+        
+
+            <p>already have an account? <button routerLink="/login" >Sign in!</button></p>
+
+
+        </div>
+    </div>
+  </section>

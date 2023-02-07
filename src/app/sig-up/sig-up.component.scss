@@ -1,0 +1,191 @@
+@import "../../assets/SCSS/variables.scss";
+.sign-form
+{
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../assets/images/signbg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    .sign-up
+    {
+        background-color: rgba($color: #131720, $alpha: 0.8);
+        width: fit-content;
+        margin: auto;
+        color: white;
+        text-align: center;
+        padding: 40px;
+        border: 1px solid #151f30;
+        border-radius: 16px;
+        min-width: 450px;
+        max-width: 600px;
+        width: 100%;
+
+        .logo
+        {
+            margin-bottom: 40px;
+            img
+            {
+                max-width: 100%;
+            }
+        }
+        form
+        {
+            .form-group
+            {
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+
+                label{
+
+                    color:#EEE;
+                    font-size:18px;
+                    padding: 10px;
+                    text-align: left;
+                }
+                input
+                {
+                    background-color: #151F30;
+                    outline: none;
+                    border: 0;
+                    border-radius: 16px;
+                    padding: 20px 25px;
+                    color: white;
+                        font: {
+                            family: $mainFont;
+                            size: 15px;
+                        };
+                    &::placeholder
+                    {
+                        color: white;
+                        font: {
+                            family: $mainFont;
+                            size: 15px;
+                        };
+                    }
+                }
+            }
+            .form-check
+            {
+                margin-left: 15px ;
+                margin-bottom: 20px;
+                width: 100%;
+                justify-content: flex-start;
+                flex-direction: row;
+
+                .form-check-input{
+                  width: 20px;
+                  height: 20px;
+                  line-height: 20px;
+                  margin-right: 5px;
+                  border-radius: 4px;
+                  -webkit-border-radius: 4px;
+                  -moz-border-radius: 4px;
+                  -ms-border-radius: 4px;
+                  -o-border-radius: 4px;
+}
+                label
+                {
+                    font-size: 16px;
+                    color: #e0e0e0;
+                    font-weight: normal;
+                    cursor: pointer;
+                    a
+                    {
+                        text-decoration: none;
+                        text-transform: capitalize;
+                        color: $mainColor;
+                        background-color: transparent;
+                        transition: 0.2s;
+                        margin-left: 3px;
+                        &:hover
+                        {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    &::selection
+                    {
+                        background-color: transparent;
+                    }
+                }
+            }
+
+            button
+            {
+                background-color: $mainColor;
+                width: 100%;
+                padding: 12px 0;
+                border-radius: 16px;
+                margin: 15px 0;
+                text-transform: uppercase;
+                color: white;
+                font: {
+                    family: $mainFont;
+                    size: 15px;
+                    weight: 500;
+
+                };
+                transition: 0.3s;
+                text-decoration: none;
+                &:hover
+                {
+                    background-color: white;
+                    color: black;
+                }
+            }
+        }
+        span
+        {
+            
+            font-size: 16px;
+            color: #e0e0e0;
+            line-height: 100%;
+            position: relative;
+
+            &::after
+            {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 150%;
+                height: 2px;
+                width: 100px;
+                background-color: $mainColor;
+            }
+            &::before
+            {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 150%;
+                height: 2px;
+                width: 100px;
+                background-color: $mainColor;
+            }
+        }
+       
+
+        p
+        {
+            font-size: 15px;
+            color: #e0e0e0;
+            button
+            {
+                margin-right: 15px;
+                text-decoration: none;
+                color: $mainColor;
+                outline: 0;
+                border: 0;
+                background-color: transparent;
+                &:hover
+                {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
